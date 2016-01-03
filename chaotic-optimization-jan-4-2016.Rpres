@@ -1,0 +1,187 @@
+Chaotic Optimization
+========================================================
+author: Andrew Andrade (andrew@andrewandrade.ca)
+date: January 4, 2015
+
+Slides online:
+[mrandrewandrade.com/talks/chaotic-optimization-jan-4-2016](http://mrandrewandrade.com/talks/chaotic-optimization-jan-4-2016.html)
+
+
+Deterministically Chaotic
+========================================================
+
+## The past determines the future
+
+# BUT
+
+## Approximate past did not approximately determine my future
+
+Highschool
+========================================================
+
+Port Credit: Science and Technology Program
+
+Specialist High Skills Major in Manufacturing
+
+Robotics!
+
+
+
+========================================================
+
+![](images/robotics.jpg)
+
+========================================================
+
+![](images/soldering.png)
+
+
+
+Highschool Co-op
+========================================================
+
+Machineshop! Sweeping -> Programming CNC
+
+Before university: Chrysler!
+
+
+========================================================
+
+![](images/sweeping.jpg)
+
+========================================================
+
+![](images/cantech.jpg)
+
+========================================================
+
+![](images/cnc.jpg)
+
+
+1st co-op: Imtex membranes
+========================================================
+
+- startup doing gas filtration
+
+![](images/imtex.bmp)
+
+- got the job because of machine shop experience
+
+Plastic Injection Molding
+========================================================
+
+- got the job because of machine shop experience
+
+![](images/mold.png)
+
+
+2nd co-op: Suncor (PetroCanada) 
+========================================================
+
+Reservoir engineering
+
+![](images/suncor.jpg)
+
+3rd co-op: Peraso
+========================================================
+
+Fabless Semiconductor
+
+Hired for electrical/software
+
+Ended up designing their first to market product
+
+![](images/waveguide.jpg)
+
+
+4th co-op: Facebook
+========================================================
+
+Facebook Manufacturing!
+
+![](images/facebook.jpg)
+
+
+
+========================================================
+
+# Luck is 
+
+
+# when preperation  
+
+# meets opportunity!
+
+Need more hands on experience!
+
+
+Larry Smith:   
+========================================================
+Unfair advantage as UW students:  
+### Co-op!
+
+- Learn what we like and what we don't
+
+- Hands on experience
+
+- Money!
+
+- Industry insight
+
+5th co-op: PetroPredict
+========================================================
+
+![](images/petropredict.jpg)
+
+
+========================================================
+
+People cannot gain anything without sacrificing something.
+
+
+## All decisions come with costs!
+
+
+
+Life's a Rollercoaster 
+========================================================
+
+![](images/stephenharper.jpg)
+
+Oil price
+========================================================
+
+![](images/oilprice.png)
+
+Global Petroleum Show
+========================================================
+
+![](images/heavyoil.jpg)
+
+Learning: Business Need Comes First!
+========================================================
+### Pivot: Pipeline Risk
+
+![](images/pipelinerisk.jpg)
+
+Taken from: http://www.mero.cz/ (can't put real data due to NDA)
+
+Running Servers
+========================================================
+
+![](images/server.jpg)
+
+Singapore!
+========================================================
+
+![](images/nus.jpg)
+
+
+Self driving bicycle!
+========================================================
+
+![](images/autobike.jpg)
+
+# Questions?
+
+### andrew@andrewandrade.ca
