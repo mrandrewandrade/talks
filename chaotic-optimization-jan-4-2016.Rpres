@@ -7,26 +7,55 @@ Slides online:
 [mrandrewandrade.com/talks/chaotic-optimization-jan-4-2016](http://mrandrewandrade.com/talks/chaotic-optimization-jan-4-2016.html)
 
 
-Deterministically Chaotic
 ========================================================
 
-## The past determines the future
+# The past determines the future
 
-# BUT
+## BUT
 
-## Approximate past did not approximately determine my future
+# Approximate past did not approximately determine my future
 
-Highschool
+Simple Function
 ========================================================
 
-Port Credit: Science and Technology Program
+![](images/apple_slicing_function.png)
 
-Specialist High Skills Major in Manufacturing
+========================================================
 
-Robotics!
+![](images/function.png)
+
+f(past) = future
+========================================================
 
 
+![](images/chaos_top_left_axis.png)
 
+
+f(past+ δ) = new future
+========================================================
+
+
+![](images/chaos_bottom_right_axis.png)
+
+
+========================================================
+
+$$ \frac{f(past+ δ )}{f(past)} = \Delta future = ? $$
+
+![](images/attractor_initial_difference.png)
+
+========================================================
+
+$$ \frac{f(past+ δ )}{f(past)} = \Delta future = ? $$
+
+# You can (randomly) change the future!
+
+========================================================
+
+
+# Proof by story!
+
+Port Credit
 ========================================================
 
 ![](images/robotics.jpg)
@@ -40,10 +69,9 @@ Robotics!
 Highschool Co-op
 ========================================================
 
-Machineshop! Sweeping -> Programming CNC
+Machineshop!
 
-Before university: Chrysler!
-
+## Sweeping -> Programming CNC
 
 ========================================================
 
@@ -61,16 +89,15 @@ Before university: Chrysler!
 1st co-op: Imtex membranes
 ========================================================
 
-- startup doing gas filtration
+Startup doing gas filtration
 
 ![](images/imtex.bmp)
 
-- got the job because of machine shop experience
 
 Plastic Injection Molding
 ========================================================
 
-- got the job because of machine shop experience
+Got the job because of machine shop experience
 
 ![](images/mold.png)
 
@@ -87,7 +114,10 @@ Reservoir engineering
 
 Fabless Semiconductor
 
-Hired for electrical/software
+![](images/radio_motherboard-420x420.jpg)
+
+
+========================================================
 
 Ended up designing their first to market product
 
@@ -112,35 +142,33 @@ Facebook Manufacturing!
 
 # meets opportunity!
 
-Need more hands on experience!
-
 
 Larry Smith:   
 ========================================================
-Unfair advantage as UW students:  
-### Co-op!
 
-- Learn what we like and what we don't
+Why you will fail to have a great career
 
-- Hands on experience
+[![Why you will fail](images/larry-smith.png)](https://www.youtube.com/watch?v=iKHTawgyKWQ "Why you will fail to have a great career")
 
-- Money!
+World of machine learning
+========================================================
+![](images/machinelearning.jpg)
 
-- Industry insight
 
 5th co-op: PetroPredict
 ========================================================
 
 ![](images/petropredict.jpg)
 
-
+Global Petroleum Show
 ========================================================
 
-People cannot gain anything without sacrificing something.
+![](images/heavyoil.jpg)
 
+Equivilent Exchange
+========================================================
 
 ## All decisions come with costs!
-
 
 
 Life's a Rollercoaster 
@@ -153,10 +181,6 @@ Oil price
 
 ![](images/oilprice.png)
 
-Global Petroleum Show
-========================================================
-
-![](images/heavyoil.jpg)
 
 Learning: Business Need Comes First!
 ========================================================
@@ -171,6 +195,22 @@ Running Servers
 
 ![](images/server.jpg)
 
+========================================================
+![](images/paper_contest3.png)
+
+Re-presenting the talk at the [Ontario Engineering Competition 2016](http://oec2016.io/)
+
+Canada wide SPE Paper Contest 2014
+========================================================
+![](images/paper_contest2.jpg)
+
+
+Third place in masters/undergrad!
+========================================================
+![](images/paper_contest.jpg)
+
+[news release](https://uwaterloo.ca/engineering/news/second-year-students-paper-takes-top-awards-both-undergrad)
+
 Singapore!
 ========================================================
 
@@ -182,6 +222,177 @@ Self driving bicycle!
 
 ![](images/autobike.jpg)
 
-# Questions?
+SE Asia!
+========================================================
 
-### andrew@andrewandrade.ca
+![](images/myanmar.jpg)
+
+What's Next
+========================================================
+
+Capstone: Energy Storage
+========================================================
+
+![](images/enclosure.png)
+
+Follow the progress: [mrandrewandrade.com/blog](http://mrandrewandrade.com/blog)
+
+Paperscraper
+========================================================
+
+![](images/paperscraper.png)
+
+Early Results
+========================================================
+
+![](images/sankey_diagram.png)
+
+Petroleum101.com
+========================================================
+
+![](images/petroleum101.png)
+
+
+
+DataScienceGuide.github.io
+========================================================
+
+[![](images/datascience_guide.png)](http://datascienceguide.github.io)
+
+========================================================
+
+
+# Takeaways
+
+
+========================================================
+
+
+School sucks...
+
+[![](images/11th_grade.png)](https://xkcd.com/519/)
+
+[xkcd.com/519/](https://xkcd.com/519/)
+
+Digital (Computer) Controls
+========================================================
+
+![](images/4th_year_controls_problem.bmp)
+
+Digital (computer) Controls
+========================================================
+
+
+![](images/4th_year_controls_problem2.bmp)
+
+School is very important
+========================================================
+Its ALL about applying what you learn
+
+![](images/math_applications.png)
+
+Example: Digit Underflow
+========================================================
+$$P(x_1) = 0.00000000001 = 1 \times 10^{-10}$$
+
+$$P(x_2) = 0.000000000000000000001 = 1 \times 10^{-20}$$
+
+$$P(x_3) = 1 \times 10^{-30}$$
+$$P(x_4) = 1 \times 10^{-100}$$
+When where are too many digits, it takes lots of memory to save and causes problems
+
+Digit Underflow Solution
+========================================================
+
+![](images/log_function.png)
+
+
+Digit Underflow Solution
+========================================================
+
+$$- \log(P(x_1)) = - \log (1 \times 10^{-10}) = 10$$
+$$- \log(P(x_2)) = - \log (1 \times 10^{-20}) = 20$$
+$$- \log(P(x_3)) = - \log (1 \times 10^{-30}) = 30$$
+$$- \log(P(x_4)) = - \log (1 \times 10^{-100}) = 100$$
+Another example: Machine intelligence
+========================================================
+
+Design a computer vision system for a copter to land in water
+![](images/image_classifiaction.bmp)
+
+Solution: Decision Tree
+========================================================
+
+![](images/decision_tree_image_classification.bmp)
+
+More examples: Computer vision
+========================================================
+
+$$Split (T,X) = H = - \sum_i p_i \log_b p_i$$ 
+
+$$H( X \text{or} Y) = 2\Big(-{1\over 4} \log_2 {1\over 4}\Big) - {1\over 2} \log_2 {1\over 2} = 1.5 $$
+
+
+Hackathons
+========================================================
+
+![](images/hack-the-north.jpg)
+
+
+Teams/Startups
+========================================================
+
+![](images/robotics_team.jpg)
+
+Side projects
+========================================================
+
+![](images/petrodictionary.png)
+
+Side projects
+========================================================
+
+![](images/IR_6506.jpg)
+
+
+
+Take away
+========================================================
+
+It comes back, but even worse!
+
+![](images/just_do_it.jpg)
+
+Resources
+========================================================
+
+Khan Acedemy  
+Udacity  
+EdX   
+Cousera   
+...  
+
+Many more!
+
+Do great things!
+========================================================
+
+![](images/self_driving.jpg)
+
+
+Questions?
+========================================================
+
+
+Andrew Andrade
+
+## andrew@andrewandrade.ca
+
+[mrandrewandrade.com/talks/chaotic-optimization-jan-4-2016](http://mrandrewandrade.com/talks/chaotic-optimization-jan-4-2016.html)
+
+Chris Thiele
+
+## christhiele@live.com
+
+
+
