@@ -34,6 +34,29 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 <script src="reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
 
+<!-- Loading the mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration -->
+
 <!-- Get Font-awesome from cdn -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
@@ -141,546 +164,13 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    /*
-    Name:       Oceans16 Dark
-    Author:     Kyle Dunovan (http://github.com/dunovank)
-    Original Color Scheme by Gadzhi Kharkharov (https://github.com/kkga/spacegray)
-    CodeMirror & NB Style adapted from panditarevolution (https://github.com/panditarevolution/ipythonNotebook_customs)
-    CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
-    Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-*/
-
-
-
-body {background-color: #262931;}
-
-a {color: #8997b0; font-family: 'Helvetica', sans-serif; }
-div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 12pt;}
-
-/* Hiding the ipython log */
-div#ipython_notebook {display: none;}
-
-
-/* INTRO PAGE */
-.toolbar_info {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
-.list_container {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
-.breadcrumb>li {text-shadow:0 0px 0; color:#8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt}
-.list_container a {color: #8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
-.item_icon {color: #2c85f7;}
-
-/*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
-*****************************************
- COMMENT THIS LINE OUT TO RESTORE TOOLBAR
-*****************************************
- <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
-
-div#maintoolbar {
-    display: none !important;
-}
-
-
-div.list_container a:hover {color: #eeeeee;}
-.list_header {
-    font-weight: normal;
-    background-color: #2A2F3C;
-}
-div.list_container :hover {
-    background-color: #2A2F3C;
-    color: #eeeeee;
-}
-div.notebook_list_header {
-      background: #262931;
-
-}
-.list_container > div {
-    border-bottom: 1px solid rgba(53, 87, 120, 0.55);
-    font-size: 12pt;
-}
-.panel-default {
-    border-color: rgba(53, 87, 120, 0.55);
-}
-.panel {
-    line-height: 22px;
-    fontsize: 12px;
-    margin-bottom: 18px;
-    background-color: #262931;
-    color: #8997b0;
-    border: 2px solid rgba(53, 87, 120, 0.55);
-    box-shadow: none;
-}
-.dropdown-menu {
-    border: 1px solid rgba(53, 87, 120, 0.95);
-    background-color: #39414F;
-    background: #39414F;
-    box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    list-style: outside none none;
-    font-size: 12pt;
-    text-align: left;
-}
-.dropdown-menu:hover{
-    background-color: #39414F;
-    border: 1px solid rgba(53, 87, 120, 0.95);
-    box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-.modal-content {
-    position: relative;
-    background-color: #39414F;
-    border: 1px solid rgba(53, 87, 120, 0.15);
-    border-radius: 3px;
-    box-shadow: 0px 3px 9px rgba(53, 87, 120, 0.25);
-    background-clip: padding-box;
-    outline: 0px none;
-}
-.dropdown-header {
-    display: block;
-    padding: 3px 20px;
-    font-size: 12pt;
-    line-height: 1.42857;
-    color: #5c6b89;
-    text-decoration: underline;
-    text-decoration-color: rgba(53, 87, 120, 0.95);
-    white-space: nowrap;
-}
-.dropdown-menu > li > a {
-    border: 1px solid #39414F;
-    display: block;
-    padding: none;
-    clear: both;
-    background-clip: padding-box;
-    font-weight: normal;
-    line-height: 1.42857;
-    color: #8997b0;
-    white-space: nowrap;
-    background-color: #39414F;
-    background: #39414F;
-}
-.dropdown-menu > li > a:hover {
-    background-clip: padding-box;
-    background-color: #39414F;
-    border: 1px solid #39414F;
-    color: #eeeeee;
-    padding: none;
-    background: #39414F;
-}
-.dropdown-menu .divider {
-    height: 2px;
-    margin: 8px 0px;
-    overflow: hidden;
-    background-color: rgba(53, 87, 120, 0.95);
-}
-.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
-    color: #5A647B;
-}
-.modal-header {
-    padding: 15px;
-    border-bottom: 1px solid rgba(53, 87, 120, 0.95);
-    min-height: 16.4286px;
-}
-#running .panel-group .panel .panel-heading {
-    background-color: #262931;
-    padding: 4px 7px;
-    line-height: 22px;
-}
-#running .panel-group .panel .panel-heading a:hover {
-    color: #2c85f7;
-}
-#running .panel-group .panel .panel-body .list_container .list_item {
-    border-bottom: 1px solid rgba(53, 87, 120, 0.55);
-}
-
-#project_name > .breadcrumb {
-    font-weight: normal;
-    color: #2c85f7;
-
-}
-.rendered_html pre, .rendered_html code {
-    font-size: 12pt;
-    color: #8997b0;
-    line-height: 100%;
-    background: #303845;
-}
-body {
-    font-family: "Helvetica", Helvetica, Arial, sans-serif;
-    font-size: 12pt;
-    line-height: 1.42857;
-    color: #8997b0;
-}
-
-#kernel_indicator {
-    float: right !important;
-    color: #2c85f7;
-}
-#kernel_indicator .kernel_indicator_name {
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 13pt;
-}
-#modal_indicator {
-    float: right !important;
-    color: #2c85f7;
-
-}
-
-.CodeMirror pre {
-  font-family: 'Hack', monospace;
-  font-size: 13pt;
-}
-
-.notebook_app {
-    background-color: #262931;
-}
-.notebook_app #header {
-    box-shadow: none !important;
-}
-#notebook-container {
-    padding: 15px;
-    background-color: #262931;
-    min-height: 0px;
-    box-shadow: none;
-}
-#header {
-    box-shadow: none;
-    background-color: #262931;
-    position: relative;
-    z-index: 100;
-}
-#header-container {
-    padding-bottom: 5px;
-    display: none !important;
-    box-shadow: none;
-}
-#header .header-bar {
-    background: #262931;
-}
-/* text in output area (i.e. print some_list) */
-div.output_html {color: #1e2429;}
-
-/* Formatting code in text, code*/
-.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px #a4b8cb solid;
-  color: #a4b8cb;
-  background-color: #303845 !important;
-  align-content: left !important;
-}
-.navbar-default {
-    background-color: #262931;
-    border-color: #262931;
-}
-#menubar .navbar {
-    border-top: 1px;
-    border-radius: 0 0 2px 2px;
-    margin-bottom: 0;
-    margin-top: 8px;
-}
-.navbar-default .navbar-nav > li > a {
-    color: #8997b0;
-    font-size: 14pt;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #ffffff;
-    background-color: rgba(53, 108, 180, .5);
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #ffffff;
-    background-color: rgba(53, 108, 180, .5);
-}
-.btn {
-    color: #8997b0;
-    background: #262931;
-    font-size: 12pt;
-    font-weight: normal;
-    border: 0 none !important;
-    box-shadow: none !important;
-    text-shadow: none;
-    vertical-align: 0px;
-}
-
-.btn-group > .btn-mini {
-    color: #8997b0;
-    background: #262931;
-    font-size: 11pt;
-    font-weight: normal;
-    border: 0 none !important;
-    box-shadow: none !important;
-    text-shadow: none;
-}
-.btn:hover {
-    color: #2c85f7;
-    background: #262931;
-    background-color: #262931;
-    background-image: none;
-}
-.btn-group > .btn-mini:hover {
-    color: #2c85f7;
-    background: #262931;
-    background-color: #262931;
-    background-image: none;
-}
-.btn-group, .btn-group-vertical {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-}
-.ipython_tooltip {
-    border: 2px solid #3572C6;
-    box-shadow: none;
-    border-radius: 2px;
-    position: absolute;
-    z-index: 1000;
-    background-color: #39414F;
-}
-
-.ipython_tooltip .tooltiptext pre {
-    border: 0px none;
-    border-radius: 0px;
-    background-color: #39414F;
-    color: #CFD2D9;
-}
-/* Formatting code in markdown cells */
-div.text_cell_render {
-    font-family: 'Helvetica', sans-serif;
-    background: #303845;
-    font-weight: 310;
-    color: #8997b0;
-}
-/* Formatting code in markdown cells */
-div.text_cell_render pre {
-    color: #8997b0;
-    background-color: #303845;
-}
-div.text_cell {
-    max-width: 100%;
-    color: #8997b0;
-}
-div.text_cell_render h1,
-div.text_cell_render h2,
-div.text_cell_render h3,
-div.text_cell_render h4,
-div.text_cell_render h5,
-div.text_cell_render h6 {
-    font-family: 'Helvetica', sans-serif;
-    background: #303845;
-    font-weight: 300;
-    color: #8997b0;
-    line-height: 80%;
-}
-
-/* text in output area (i.e. print some_list) */
-div.output_html {color: #a4b8cb;}
-
-/* Formatting code in text, code*/
-.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px #a4b8cb solid;
-  color: #a4b8cb;
-  background-color: #39414F !important;
-  align-content: left !important;
-}
-
-button.close {
-    padding: 0px;
-    cursor: pointer;
-    background: transparent none repeat scroll 0% 0%;
-    border: 0px none;
-}
-.close {
-    float: right;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 1;
-    color: #3572C6;
-    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
-    opacity: 0.3;
-}
-.close:hover {
-    color: #0095ff;
-    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
-    opacity: 0.9;
-}
-.form-control {
-    display: block;
-    width: 100%;
-    height: 32px;
-    padding: 6px 12px;
-    font-size: 13pt;
-    line-height: 1.6;
-    color: #6ea3d4;
-    background-color: #303845;
-    background-image: none;
-    border: 1px solid rgba(53, 87, 120, 0.95);
-    border-radius: 2px;
-    box-shadow: none;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-}
-
-.modal-footer {
-    padding: 15px;
-    text-align: right;
-    border-top: 1px solid rgba(53, 87, 120, 0.95);
-}
-.input-form-control:hover:active {
-      background-color:  rgba(53, 87, 120, 0.95);
-      selected:  rgba(53, 87, 120, 0.95);
-}
-
-span.ansiblack {color: #2b303b;}
-span.ansiblue {color: #6ea3d4;}
-span.ansigray {color: #B4B7B4;}
-span.ansigreen {color: #8FC198;}
-span.ansipurple {color: #BE8fC1;}
-span.ansicyan {color: #7BC6C0;}
-span.ansiyellow {color: #DDD7A3;}
-span.ansired {color: #DB797C;}
-
-div.output_stderr {background-color: #DB797C;}
-div.output_stderr pre {color: #D0D4E6;}
-
-.cm-s-ipython.CodeMirror {background: #303845; color: #D0D4E6; font-size:13pt !important;}
-.cm-s-ipython div.CodeMirror-selected {background: #3C4555 !important;}
-.cm-s-ipython .CodeMirror-gutters {background: #39414F; border: 0px; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: #5A647B !important; font-size: 11pt;}
-.cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
-.cm-s-ipython span.cm-comment {color: #6E7C95; font-style: normal !important;}
-.cm-s-ipython span.cm-atom {color: #CAA6EC;}
-.cm-s-ipython span.cm-number {color: #EFAA8E;}
-.cm-s-ipython span.cm-property {color: #77ABE7;}
-.cm-s-ipython span.cm-attribute {color: #E39194;}
-.cm-s-ipython span.cm-keyword {color: #CAA6EC; font-weight: normal;}
-.cm-s-ipython span.cm-string {color: #8FCA9A; font-weight: normal;}
-.cm-s-ipython span.cm-operator {color: #77ABE7; font-weight: normal;}
-.cm-s-ipython span.cm-builtin {color: #E39194; font-weight: normal;}
-.cm-s-ipython span.cm-boolean {color: #E39194;}
-.cm-s-ipython span.cm-variable {color: #D0D4E6;}
-.cm-s-ipython span.cm-variable-2 {color: #E39194;}
-
-.cm-s-ipython span.cm-def {color: #77ABE7; font-weight: normal;}
-.cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
-.cm-s-ipython span.cm-tag {color: #CAA6EC;}
-.cm-s-ipython span.cm-link {color: #E39194;}
-.cm-s-ipython span.cm-storage {color: #CAA6EC;}
-.cm-s-ipython span.cm-entity {color: #E39194;}
-.cm-s-ipython span.cm-class {color: #E5DEA5;}
-.cm-s-ipython span.cm-support {color: #77ABE7;}
-.cm-s-ipython span.cm-qualifier {color: #77ABE7;}
-.cm-s-ipython span.cm-property {color: #77ABE7;}
-
-
-
-div.CodeMirror span.CodeMirror-matchingbracket { color: #eeeeee; background: rgba(53, 108, 180, .75) !important ; }
-div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #eeeeee; background: rgba(191, 97, 106, .65) !important ; }
-.cm-s-ipython .CodeMirror-matchingbracket { color: #eeeeee; background: rgba(53, 108, 180, .75)  !important; }
-.cm-s-ipython .CodeMirror-nonmatchingbracket { color: #eeeeee; background: rgba(191, 97, 106, .65) !important; }
-
-
-div.cell { border: medium solid #262931; padding: 0px; border-radius: 0px; }
-div.cell.selected { border: medium solid #3572C6; padding: 0px; border-radius: 0px; }
-.edit_mode div.cell.selected {border: medium solid rgba(53, 108, 180, .45) !important; padding: 0px; border-radius: 0px; }
-div.cell.edit_mode {border: medium solid rgba(53, 108, 180, .45) !important; padding: 0px; border-radius: 0px;}
-
-div.prompt {
-    padding: 0.3em;
-    margin: 0px;
-    font-family: monospace;
-    text-align: left;
-    line-height: 1.21429em;
-    min-width: 11ex;
-    font-size: 9.5pt;
-}
-div.input_area {
-    margin-bottom: 0px;
-    border: 0px;
-    border-radius: 0px;
-}
-/*Input and output cells formatting*/
-div.prompt.input_prompt {
-    font-family: 'Hack', monospace;
-    border-right: 2px solid rgba(53, 108, 180, .4);
-    font-weight: bold;
-    font-size: 9.5pt;
-    color: #5A647B;
-    background-color: #303845;
-    width: 1em;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-div.prompt.output_prompt {
-    font-family: 'Hack', monospace;
-    font-weight: bold;
-    background-color: #39414F;
-    color: #39414F;
-    font-size: 9.5pt;
-    width: 1em;
-    margin-bottom: 8px;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-div.out_prompt_overlay.prompt {
-    font-family: 'Hack', monospace;
-    font-weight: bold;
-    font-size: 9.5pt;
-    width: 1em;
-    margin-bottom: 8px;
-    background-color: #39414F;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-}
-div.out_prompt_overlay.prompt:hover {
-    font-family: 'Hack', monospace;
-    font-weight: bold;
-    font-size: 9.5pt;
-    width: 1em;
-    border-radius: 4px;
-    margin-bottom: 8px;
-    background-color: #39414F;
-    box-shadow: #303845 2px 2px 6px 4px inset;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-}
-div.output_wrapper {
-    background-color:#39414F;
-    margin-bottom: 0em;
-    margin-top: 0em;
-    border: 0px;
-}
-div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
-    padding-top: 1em;
-    margin-bottom: 8px;
-    margin-top: 8px;
-    margin-left: 8px;
-    margin-right: 8px;
-    background-color: #39414F;
-    color: #CFD2D9;
-}
-div.output_area pre {
-    color: #CFD2D9;
-    font-size: 12pt;
-}
-div.output_subarea {
-    overflow-x: auto;
-    padding: 1.0em;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    flex: 1;
-    max-width: calc(100% - 14ex);
-}
-
-@import url('theme.css');
-    </style>
 
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-html {
-  overflow-y: auto;
-}
 .reveal {
   font-size: 160%;
+  overflow-y: scroll;
 }
 .reveal pre {
   width: inherit;
@@ -733,6 +223,14 @@ div.output_prompt {
   /* 5px right shift to account for margin in parent container */
   margin: 5px 5px 0 0;
 }
+div.text_cell.rendered .rendered_html {
+  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
+  overflow-y: hidden;
+}
+a.anchor-link {
+  /* There is still an anchor, we are only hidding it */
+  display: none;
+}
 .rendered_html p {
   text-align: inherit;
 }
@@ -746,9 +244,7 @@ div.output_prompt {
 <body>
 <div class="reveal">
 <div class="slides">
-<section>
-    <section>
-    
+<section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -802,7 +298,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -812,8 +307,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="2">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -823,9 +317,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="3">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -835,9 +327,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="4">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -847,9 +337,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -858,8 +346,7 @@ div.text_cell_render{
 <h1 id="Goals-of-Talk">Goals of Talk<a class="anchor-link" href="#Goals-of-Talk">&#182;</a></h1>
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="6">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -869,9 +356,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="7">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -881,9 +366,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="8">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -893,11 +376,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -914,7 +393,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -930,10 +408,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -945,7 +420,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -956,10 +430,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -971,7 +442,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -983,7 +453,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -995,7 +464,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1006,7 +474,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1017,7 +484,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1028,7 +494,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1038,8 +503,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="20">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1049,9 +513,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1061,10 +523,7 @@ div.text_cell_render{
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1077,7 +536,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1089,7 +547,6 @@ div.text_cell_render{
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1101,7 +558,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1111,8 +567,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="26">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1122,11 +577,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1136,8 +587,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="28">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1147,9 +597,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="29">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1159,9 +607,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="30">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1171,9 +617,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="31">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1183,9 +627,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="32">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1195,9 +637,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="33">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1207,9 +647,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1219,8 +657,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="35">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1230,9 +667,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1243,7 +678,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1253,8 +687,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="38">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1264,11 +697,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1279,8 +708,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="40">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1291,11 +719,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1305,8 +729,7 @@ Source: Joe Lonsdale / Formation8</p>
 <h1 id="2.-and-3.-Aquiring-and-Assimilating-Data">2. and 3. Aquiring and Assimilating Data<a class="anchor-link" href="#2.-and-3.-Aquiring-and-Assimilating-Data">&#182;</a></h1>
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="42">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1316,9 +739,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="43">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1328,9 +749,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="44">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1340,9 +759,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="45">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1352,9 +769,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="46">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1364,9 +779,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="47">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1376,9 +789,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1402,7 +813,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1414,8 +824,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="51">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1426,9 +835,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1443,7 +850,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1455,7 +861,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1483,7 +888,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1494,10 +898,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1507,8 +908,7 @@ Source: Joe Lonsdale / Formation8</p>
 <h1 id="4-Analyze">4 Analyze<a class="anchor-link" href="#4-Analyze">&#182;</a></h1>
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="58">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1518,9 +918,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="59">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1530,9 +928,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="60">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1542,11 +938,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1556,8 +948,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="62">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1573,9 +964,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1586,7 +975,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1596,8 +984,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="65">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1607,9 +994,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1620,7 +1005,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1632,7 +1016,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1642,8 +1025,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="69">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1653,9 +1035,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1665,8 +1045,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="71">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1676,9 +1055,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1690,7 +1067,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1701,7 +1077,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1712,7 +1087,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1723,7 +1097,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1734,7 +1107,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1745,7 +1117,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1756,7 +1127,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1766,8 +1136,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="80">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1777,9 +1146,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1790,7 +1157,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1801,7 +1167,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1812,7 +1177,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1840,10 +1204,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1857,8 +1218,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="86">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1873,11 +1233,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1888,8 +1244,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="88">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1899,9 +1254,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="89">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1912,11 +1265,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1926,8 +1275,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="91">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1939,11 +1287,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-    
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1955,7 +1299,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1967,7 +1310,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2002,7 +1344,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2012,8 +1353,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="98">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2023,9 +1363,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-    </div><div class="fragment" data-fragment-index="99">
-    
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2036,8 +1374,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div>
-    </div><div class="fragment" data-fragment-index="99">
-        
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2050,9 +1386,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div>
-        </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2066,7 +1400,6 @@ Source: Joe Lonsdale / Formation8</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2077,10 +1410,7 @@ Source: Joe Lonsdale / Formation8</p>
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2097,8 +1427,7 @@ Find natural groupings</li>
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="104">
-    
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2113,9 +1442,7 @@ Identify set of categories</p>
 
 </div>
 </div>
-</div>
-    </div></section><section>
-    
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2206,7 +1533,6 @@ Identify set of categories</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2223,7 +1549,6 @@ Identify set of categories</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2234,7 +1559,6 @@ Identify set of categories</p>
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2255,7 +1579,6 @@ Piecewise Polynomial
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2276,7 +1599,6 @@ Piecewise Polynomial
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2290,7 +1612,6 @@ Piecewise Polynomial
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2352,7 +1673,6 @@ Piecewise Polynomial
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2364,7 +1684,6 @@ Piecewise Polynomial
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2376,7 +1695,6 @@ Piecewise Polynomial
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2387,7 +1705,6 @@ Piecewise Polynomial
 </div>
 </div>
 </div></section><section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2397,10 +1714,7 @@ Piecewise Polynomial
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2415,62 +1729,61 @@ Piecewise Polynomial
 
 </div>
 </div>
-</div></section>
-    </section>
+</div></section></section>
 </div>
 </div>
 
-<script src="reveal.js/lib/js/head.min.js"></script>
-
-<script src="reveal.js/js/reveal.js"></script>
-
 <script>
 
-// Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
-controls: true,
-progress: true,
-history: true,
+require(
+    {
+      // it makes sense to wait a little bit when you are loading
+      // reveal from a cdn in a slow connection environment
+      waitSeconds: 15
+    },
+    [
+      "reveal.js/lib/js/head.min.js",
+      "reveal.js/js/reveal.js"
+    ],
 
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+    function(head, Reveal){
 
-// Optional libraries used to extend on reveal.js
-dependencies: [
-{ src: "reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
-{ src: "reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
-]
-});
-</script>
+        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
 
-<!-- Loading mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
 
-<script>
-Reveal.addEventListener( 'slidechanged', function( event ) {
-  window.scrollTo(0,0);
-  MathJax.Hub.Rerender(event.currentSlide);
-});
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: "reveal.js/lib/js/classList.js",
+                  condition: function() { return !document.body.classList; } },
+                { src: "reveal.js/plugin/notes/notes.js",
+                  async: true,
+                  condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+        var update = function(event){
+          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
+            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
+          }
+        };
+
+        Reveal.addEventListener('slidechanged', update);
+
+        var update_scroll = function(event){
+          $(".reveal").scrollTop(0);
+        };
+
+        Reveal.addEventListener('slidechanged', update_scroll);
+
+    }
+);
+
 </script>
 
 </body>
